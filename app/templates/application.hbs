@@ -1,5 +1,22 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>Tiny Trello</h1>
+<h2>Main List</h2>
+<ul>
+{{#each defaultList as |listItem|}}
+  <li>{{listItem.name}}</li>
+{{/each}}
+</ul>
 
-{{outlet}}
+<hr>
+
+{{#if newList}}
+
+  {{#new-list lists as |list|}}
+  {{/new-list}}
+
+{{/if}}
+
+<button {{action "addNewList"}}>Add List...</button>
+
+
+
+
