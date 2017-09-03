@@ -1,0 +1,14 @@
+{{#each lists as |list|}}
+  <div>
+    <h2>{{list.name}}</h2>
+  </div>
+
+  <button>Add List Item...</button>
+
+  <hr>
+
+{{/each}}
+
+{{input value=value enter="addList" placeholder="New list name"}}
+
+{{yield results}}
