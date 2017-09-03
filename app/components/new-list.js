@@ -12,6 +12,7 @@ export default Ember.Component.extend({
   actions: {
     addList(listName) {
       this.lists.addObject({name: listName, description: null});
+      this.set('value', '');
     }
   }
 });
