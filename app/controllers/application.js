@@ -9,17 +9,11 @@ export default Ember.Controller.extend({
     description: 'Review binary search trees'
   }],
   newLists: [],
-  newList: false,
+  showInput: false,
   listCount: 0,
   actions: {
-    addNewList() {
-      // let newCount = this.listCount + 1
-      // this.set('listCount', newCount);
-      this.set('newList', true)
-    },
-    addList(listName) {
-      this.lists.push({name: listName, description: null})
-      console.log('this.lists', this.lists)
+    newListInput() {
+      this.set('showInput', true)
     }
   }
 });

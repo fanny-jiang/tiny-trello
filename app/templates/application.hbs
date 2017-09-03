@@ -8,14 +8,14 @@
 
 <hr>
 
-{{#if newList}}
+{{#if showInput}}
 
   {{#new-list lists as |list|}}
   {{/new-list}}
 
 {{/if}}
 
-<button {{action "addNewList"}}>Add List...</button>
+<button {{action "newListInput"}}>Add List...</button>
 
 
 
