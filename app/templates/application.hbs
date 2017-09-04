@@ -1,15 +1,18 @@
+{{!-- Nav Bar --}}
 {{#bs-navbar type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
   <div class="navbar-header">
     {{#link-to "index" class="navbar-brand"}}Tiny Trello{{/link-to}}
   </div>
 {{/bs-navbar}}
 
+{{!-- Body --}}
 <div class="container">
   <body>
     <div class="row">
       <div class="col-md-4 card">
       <h2>Main List</h2>
         {{default-list}}
+        {{new-list-item}}
       </div>
       {{new-list}}
     </div>
