@@ -1,0 +1,17 @@
+{{#each defaultList as |listItem|}}
+  <h4{{action "toggleModal"}}>{{listItem.name}}</h4>
+
+    {{#if isShowingModal}}
+      {{#modal-dialog
+        onClose="toggleModal"
+        translucentOverlay=true
+      }}
+      {{textarea value=listItem.description cols="80" rows="6"}}
+
+      <button onclick={{action "deleteListItem" item.name}}>Delete</button>
+      <button onclick={{action "toggleModal"}}>Save and Close</button>
+    {{/modal-dialog}}
+  {{/if}}
+{{/each}}
+
+{{yield}}

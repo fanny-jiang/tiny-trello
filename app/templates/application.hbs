@@ -1,20 +1,21 @@
-<h1>Tiny Trello</h1>
-<hr>
-<h2>Main List</h2>
-{{#each defaultList as |listItem|}}
-  <h3{{action "toggleModal"}}>{{listItem.name}}</h3>
-{{/each}}
+{{#bs-navbar type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
+  <div class="navbar-header">
+    {{#link-to "index" class="navbar-brand"}}Tiny Trello{{/link-to}}
+  </div>
+{{/bs-navbar}}
 
-<hr>
+<div class="container">
+  <body>
+    <div class="row">
+      <div class="col-md-4 card">
+      <h2>Main List</h2>
+        {{default-list}}
+      </div>
+      {{new-list}}
+    </div>
+  </body>
+</div>
 
-{{new-list}}
 
-{{#if isShowingModal}}
-  {{#modal-dialog onClose="toggleModal"
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-    Oh hai there!
-  {{/modal-dialog}}
-{{/if}}
 
 

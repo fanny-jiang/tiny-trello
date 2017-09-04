@@ -1,15 +1,12 @@
 {{#each-in lists as |list|}}
-  <div>
+  <div class="col-md-4 card">
     <h2>{{list}}</h2>
       {{new-list-item listName=list}}
   </div>
-
 {{/each-in}}
-
 {{#if showInput}}
-  {{input value=listName enter="addList" placeholder="New list name"}}
+  {{input class="add-new-list" value=listName enter="addList" placeholder="New list name" autofocus="autofocus"}}
 {{/if}}
 
-<button {{action "newListInput"}}>Add List...</button>
-
+<button class="add-new-list" {{action "newListInput"}}>Add List...</button>
 {{yield}}

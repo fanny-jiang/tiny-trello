@@ -10,6 +10,13 @@ module.exports = function(defaults) {
       includePaths: [
         'bower_components/foundation/scss'
       ]
+    },
+
+    'ember-bootstrap': {
+      bootstrapVersion: 3,
+      importBootstrapFont: true,
+      importBootstrapCSS: false,
+      importBootstrapTheme: true
     }
   });
 

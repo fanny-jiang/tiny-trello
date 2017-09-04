@@ -1,5 +1,5 @@
 {{#each listItems as |item|}}
-  <h3 {{action "toggleModal"}}>{{item.name}}</h3>
+  <h4 {{action "toggleModal"}}>{{item.name}}</h4>
   {{#if isShowingModal}}
     {{#modal-dialog
       onClose="toggleModal"
@@ -14,10 +14,9 @@
 {{/each}}
 
 {{#if showInput}}
-  {{input value=listItem enter=(action "addListItem" listItem listName)placeholder="New list item"}}
+  {{input value=listItem enter=(action "addListItem" listItem listName) placeholder="New list item" autofocus="autofocus"}}
 {{/if}}
 
 <button {{action "newListitemInput"}}>Add List Item...</button>
-<hr>
 
 {{yield}}

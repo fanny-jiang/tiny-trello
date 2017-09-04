@@ -1,2 +1,20 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
+@import "ember-bootstrap/bootstrap";
+
+button {
+  margin-top: 20px;
+}
+
+.add-new-list {
+  margin-left: 15px;
+}
+
+.card {
+  border: 2px solid #a1a1a1;
+  padding: 10px 20px;
+  background: #dddddd;
+  width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+}
