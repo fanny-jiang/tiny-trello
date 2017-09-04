@@ -15,8 +15,8 @@ export default Ember.Component.extend({
     addListItem(listItem) {
       this.listItems.pushObject(listItem);
       this.set('listItem', '');
-      this.toggleProperty('newItem');
-      console.log('list items: ', this.listItems)
+      this.toggleProperty('showInput');
+      console.log('list items: ', this.listItems);
     }
   }
 });

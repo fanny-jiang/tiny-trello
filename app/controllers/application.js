@@ -8,11 +8,10 @@ export default Ember.Controller.extend({
     name: 'Practice algorithms',
     description: 'Review binary search trees'
   }],
-  showInput: false,
-  listCount: 0,
-  actions: {
-    newListInput() {
-      this.toggleProperty('showInput');
-    }
-  }
+  // showInput: false,
+  // actions: {
+  //   newListInput() {
+  //     this.toggleProperty('showInput');
+  //   }
+  // }
 });

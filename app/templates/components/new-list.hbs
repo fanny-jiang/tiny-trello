@@ -6,6 +6,10 @@
 
 {{/each-in}}
 
-{{input value=listName enter="addList" placeholder="New list name"}}
+{{#if showInput}}
+  {{input value=listName enter="addList" placeholder="New list name"}}
+{{/if}}
+
+<button {{action "newListInput"}}>Add List...</button>
 
 {{yield}}
