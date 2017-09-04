@@ -1,24 +1,11 @@
 {{#each-in lists as |list|}}
   <div>
     <h2>{{list}}</h2>
-    <ul>
-      {{#each list.items as |item|}}
-        <li>{{item}}</li>
-      {{/each}}
-    </ul>
+      {{new-list-item listName=list}}
   </div>
-
-{{#if showInput}}
-  <form {{action "addListItem" listItem list on="submit"}}>
-    {{input value=listItem placeholder="New list item"}}
-  </form>
-{{/if}}
-
-<button {{action "newItemInput"}}>Add List Item...</button>
-  <hr>
 
 {{/each-in}}
 
 {{input value=listName enter="addList" placeholder="New list name"}}
 
-{{yield results}}
+{{yield}}

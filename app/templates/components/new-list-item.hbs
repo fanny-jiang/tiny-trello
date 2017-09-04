@@ -1,0 +1,10 @@
+{{!-- <h1>{{listName}}</h1> --}}
+{{#each listItems as |item|}}
+  <h3>{{item}}</h3>
+{{/each}}
+
+{{input value=listItem enter=(action "addListItem" listItem listName)placeholder="New list item"}}
+
+<button {{action "newListitemInput"}}>Add List Item...</button>
+  <hr>
+{{yield}}

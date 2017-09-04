@@ -1,17 +1,14 @@
 <h1>Tiny Trello</h1>
 <h2>Main List</h2>
-<ul>
 {{#each defaultList as |listItem|}}
-  <li>{{listItem.name}}</li>
+  <h3>{{listItem.name}}</h3>
 {{/each}}
-</ul>
 
 <hr>
 
 {{#if showInput}}
 
-  {{#new-list lists as |list|}}
-  {{/new-list}}
+  {{new-list}}
 
 {{/if}}
 
