@@ -1,17 +1,20 @@
 <h1>Tiny Trello</h1>
+<hr>
 <h2>Main List</h2>
 {{#each defaultList as |listItem|}}
-  <h3>{{listItem.name}}</h3>
+  <h3{{action "toggleModal"}}>{{listItem.name}}</h3>
 {{/each}}
 
 <hr>
 
-{{!-- {{#if showInput}} --}}
-  {{new-list}}
-{{!-- {{/if}} --}}
+{{new-list}}
 
-{{!-- <button {{action "newListInput"}}>Add List...</button> --}}
-
-
+{{#if isShowingModal}}
+  {{#modal-dialog onClose="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+    Oh hai there!
+  {{/modal-dialog}}
+{{/if}}
 
 

@@ -1,0 +1,11 @@
+{{#modal-dialog
+  onClose="toggleModal"
+  translucentOverlay=true
+}}
+  <h1>{{description}}</h1>
+  {{!-- <p>Basic</p> --}}
+  <button onclick={{action "toggleModal"}}>Close</button>
+{{/modal-dialog}}
+
+
+{{yield}}

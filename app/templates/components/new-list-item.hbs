@@ -1,5 +1,16 @@
 {{#each listItems as |item|}}
-  <h3>{{item}}</h3>
+  <h3 {{action "toggleModal"}}>{{item.name}}</h3>
+  {{#if isShowingModal}}
+    {{#modal-dialog
+      onClose="toggleModal"
+      translucentOverlay=true
+    }}
+      {{textarea value=item.description cols="80" rows="6"}}
+
+      <button onclick={{action "deleteListItem" item.name}}>Delete</button>
+      <button onclick={{action "toggleModal"}}>Save and Close</button>
+    {{/modal-dialog}}
+  {{/if}}
 {{/each}}
 
 {{#if showInput}}
@@ -7,5 +18,6 @@
 {{/if}}
 
 <button {{action "newListitemInput"}}>Add List Item...</button>
-  <hr>
+<hr>
+
 {{yield}}
