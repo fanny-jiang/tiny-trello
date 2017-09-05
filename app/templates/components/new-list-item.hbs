@@ -1,10 +1,11 @@
 {{#each listItems as |item|}}
   <h4 onClick={{action "toggleModal"}}>{{item.name}}</h4>
     {{#if isShowingModal}}
-      {{#list-item-modal
+      {{list-item-modal
         itemName=item.name
         description=item.description
-        }}{{/list-item-modal}}
+        onSubmit=(action "deleteListItem" item.name)
+        }}
     {{/if}}
  {{/each}}
 

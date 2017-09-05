@@ -20,26 +20,17 @@ export default Ember.Component.extend({
       console.log('list items: ', this.listItems);
     },
     deleteListItem(listItem) {
+      console.log('delete button is calling deleteListItem action')
+      console.log('selected listitem', listItem);
       let filtered = this.listItems.filter((item) => {
-        return item.name === listItem
+        return item.name !== listItem
       })
       console.log('Filtered', filtered);
       this.set('listItems',filtered);
       console.log('listitems: ', this.listItems)
     },
-    // toggleModalOpen() {
-    //   this.set('isShowingModal', true);
-    //   // this.set(itemName, true);
-    // },
-    // toggleModalClose() {
-    //   this.set('isShowingModal', false);
-    //   // this.set(itemName, false)
-    // },
     toggleModal() {
       this.toggleProperty('isShowingModal');
-    },
-    editDescription(event) {
-      console.log('event from submit button: ', event);
     }
   }
 });
