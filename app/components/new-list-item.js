@@ -7,6 +7,13 @@ export default Ember.Component.extend({
   init() {
     this._super.apply(this, arguments);
     this.set('listItems', Ember.A());
+    this.listItems.pushObjects([{
+      name: 'Learn Ember.js',
+      description: 'Complete emberschool tutorial'
+    }, {
+      name: 'Practice algorithms',
+      description: 'Review binary search trees'
+    }]);
   },
   isShowingModal: false,
   actions: {
@@ -17,17 +24,12 @@ export default Ember.Component.extend({
       this.listItems.pushObject({name: listItem, description: ''});
       this.set('listItem', '');
       this.toggleProperty('showInput');
-      console.log('list items: ', this.listItems);
     },
     deleteListItem(listItem) {
-      console.log('delete button is calling deleteListItem action')
-      console.log('selected listitem', listItem);
       let filtered = this.listItems.filter((item) => {
         return item.name !== listItem
       })
-      console.log('Filtered', filtered);
       this.set('listItems',filtered);
-      console.log('listitems: ', this.listItems)
     },
     toggleModal() {
       this.toggleProperty('isShowingModal');

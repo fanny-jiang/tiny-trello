@@ -1,5 +1,5 @@
 {{#each listItems as |item|}}
-  <h4 onClick={{action "toggleModal"}}>{{item.name}}</h4>
+  <h4><a href="#" onClick={{action "toggleModal"}}>{{item.name}}</a></h4>
     {{#if isShowingModal}}
       {{list-item-modal
         itemName=item.name
