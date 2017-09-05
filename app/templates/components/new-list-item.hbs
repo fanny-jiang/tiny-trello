@@ -1,20 +1,15 @@
 {{#each listItems as |item|}}
-  <h4 {{action "toggleModal"}}>{{item.name}}</h4>
-  {{#if isShowingModal}}
-    {{#modal-dialog
-      onClose="toggleModal"
-      translucentOverlay=true
-    }}
-      {{textarea value=item.description cols="80" rows="6"}}
-
-      <button onclick={{action "deleteListItem" item.name}}>Delete</button>
-      <button onclick={{action "toggleModal"}}>Save and Close</button>
-    {{/modal-dialog}}
-  {{/if}}
-{{/each}}
+  <h4 onClick={{action "toggleModal"}}>{{item.name}}</h4>
+    {{#if isShowingModal}}
+      {{#list-item-modal
+        itemName=item.name
+        description=item.description
+        }}{{/list-item-modal}}
+    {{/if}}
+ {{/each}}
 
 {{#if showInput}}
-  {{input value=listItem enter=(action "addListItem" listItem listName) placeholder="New list item" autofocus="autofocus"}}
+  {{input value=listItem enter=(action "addListItem" listItem listName) placeholder="New list item" autofocus=true}}
 {{/if}}
 
 <button {{action "newListitemInput"}}>Add List Item...</button>

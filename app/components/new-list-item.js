@@ -27,8 +27,19 @@ export default Ember.Component.extend({
       this.set('listItems',filtered);
       console.log('listitems: ', this.listItems)
     },
+    // toggleModalOpen() {
+    //   this.set('isShowingModal', true);
+    //   // this.set(itemName, true);
+    // },
+    // toggleModalClose() {
+    //   this.set('isShowingModal', false);
+    //   // this.set(itemName, false)
+    // },
     toggleModal() {
       this.toggleProperty('isShowingModal');
+    },
+    editDescription(event) {
+      console.log('event from submit button: ', event);
     }
   }
 });

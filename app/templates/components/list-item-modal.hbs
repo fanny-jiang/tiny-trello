@@ -1,11 +1,9 @@
-{{#modal-dialog
-  onClose="toggleModal"
-  translucentOverlay=true
-}}
-  <h1>{{description}}</h1>
-  {{!-- <p>Basic</p> --}}
-  <button onclick={{action "toggleModal"}}>Close</button>
-{{/modal-dialog}}
-
+{{#bs-modal-simple title=itemName}}
+  {{#bs-form formLayout="horizontal" model=this onSubmit=(action "closeModal" itemName=itemName)}}
+    {{textarea value=description cols="75" rows="6" property="description"}}
+    {{bs-button defaultText="Save" type="primary" buttonType="submit" onClick=(action "closeModal" itemName=itemName)}}
+    {{bs-button defaultText="Delete" type="danger" onClick=(action "closeModal" itemName=itemName)}}
+  {{/bs-form}}
+{{/bs-modal-simple}}
 
 {{yield}}

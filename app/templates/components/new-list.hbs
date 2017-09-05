@@ -5,7 +5,7 @@
   </div>
 {{/each-in}}
 {{#if showInput}}
-  {{input class="add-new-list" value=listName enter="addList" placeholder="New list name" autofocus="autofocus"}}
+  {{input class="add-new-list" value=listName enter="addList" placeholder="New list name" autofocus=true}}
 {{/if}}
 
 <button class="add-new-list" {{action "newListInput"}}>Add List...</button>
