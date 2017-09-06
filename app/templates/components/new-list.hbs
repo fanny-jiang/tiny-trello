@@ -1,9 +1,8 @@
-{{#each-in lists as |list|}}
+{{#each-in lists as |listName|}}
   <div class="col-md-4 card">
-    <h2>{{list}}</h2>
-      {{new-list-item
-        listName=list
-        onClick=(action "showDescription")}}
+    <h2>{{listName}}</h2>
+      {{!-- onClick evt from new-list-item triggers show description action and passes selected list item to the main app --}}
+      {{new-list-item onClick=(action "showDescription")}}
   </div>
 {{/each-in}}
 

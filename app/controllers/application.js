@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  displayModal: null,
+  selectedItem: null,
+  itemToDelete: null,
   defaultItems: [{
     name: 'Learn Ember.js',
     description: 'Complete emberschool tutorial'
@@ -11,9 +14,7 @@ export default Ember.Controller.extend({
   actions: {
     openModal(item) {
       this.set('displayModal', true);
-      this.set('selectedItem', item)
-      console.log('item from application open modal: ', item)
-      console.log('selecteditem:', this.selectedItem)
+      this.set('selectedItem', item);
     },
     closeModal() {
       this.set('displayModal', false);
@@ -21,7 +22,6 @@ export default Ember.Controller.extend({
     deleteItem() {
       this.set('displayModal', false);
       this.set('itemToDelete', this.selectedItem);
-      console.log('DELETE BUTTON reached application', this.itemToDelete)
     }
   }
 });

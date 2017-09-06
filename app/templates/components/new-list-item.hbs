@@ -1,14 +1,20 @@
 {{#each listItems as |item|}}
-  <h4 id={{item.name}}><a href="#" onClick={{action "showDescription" item}}>{{item.name}}</a></h4>
+  <h4 id={{item.name}}>
+    <a href="#" onClick={{action "showDescription" item}}>{{item.name}}</a>
+  </h4>
 {{/each}}
 
 <div class="add-list-item">
-  {{#if showInput}}
-    {{input value=listItem enter=(action "addListItem" listItem listName) placeholder="New list item" autofocus=true}}
+  {{!-- show/hide new item input box --}}
+  {{#if displayInput}}
+    {{input
+      value=listItem
+      enter=(action "addListItem" listItem)
+      placeholder="New list item" autofocus=true}}
   {{/if}}
 
-  <button class="btn add-list-item" {{action "newListitemInput"}}>Add List Item...</button>
-
+  {{!-- button to toggle visibility of new item input --}}
+  <button class="btn add-list-item" {{action "newListItemInput"}}>Add List Item...</button>
 </div>
 
 {{yield}}

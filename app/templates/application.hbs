@@ -11,25 +11,27 @@
     <div class="row">
       <div class="col-md-4 card">
       <h2>Main List</h2>
+      {{!-- Default list items --}}
         {{#each defaultItems as |item|}}
           <h4 id={{item.name}}><a href="#" onClick={{action "openModal" item}}>{{item.name}}</a></h4>
         {{/each}}
+        {{!-- Default list's new items --}}
         {{new-list-item
           onClick=(action "openModal")
           itemToDelete=itemToDelete}}
       </div>
+      {{!-- New lists --}}
       {{new-list
         onClick=(action "openModal")}}
     </div>
   </body>
+
+  {{!-- Modal Dialog--}}
+  {{#if displayModal}}
+    {{list-item-modal
+      itemName=selectedItem.name
+      description=selectedItem.description
+      onClick=(action "closeModal")
+      onSubmit=(action "deleteItem")}}
+  {{/if}}
 </div>
-
-{{!-- Modal --}}
-
-{{#if displayModal}}
-  {{list-item-modal
-    itemName=selectedItem.name
-    description=selectedItem.description
-    onClick=(action "closeModal")
-    onSubmit=(action "deleteItem")}}
-{{/if}}

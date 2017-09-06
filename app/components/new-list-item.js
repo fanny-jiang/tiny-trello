@@ -1,39 +1,34 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  listItems: null,
-  showInput: false,
+  listItems: null, // keeps track of list items to render for each list
+  displayInput: false, // controls visibility of input box for new list item
 
   init() {
     this._super.apply(this, arguments);
-    this.set('listItems', Ember.A());
+    this.set('listItems', Ember.A()); // initialize listItems to empty array
   },
   didReceiveAttrs() {
+    // when component receives "itemToDelete" attribute from main app, remove element from DOM (jQuery)
     this._super.apply(this, arguments);
     if (this.itemToDelete) {
       document.getElementById(this.itemToDelete.name).remove();
     }
   },
   actions: {
-    newListitemInput() {
-      this.toggleProperty('showInput');
+    // toggles visibility of input textbox
+    newListItemInput() {
+      this.toggleProperty('displayInput');
     },
     addListItem(listItem) {
       this.listItems.pushObject({name: listItem, description: ''});
       this.set('listItem', '');
-      this.toggleProperty('showInput');
-      console.log('listItems after adding', this.listItems)
+      this.toggleProperty('displayInput');
     },
-    deleteListItem(listItem) {
-      console.log('listItem to delete', listItem)
-      let filtered = this.listItems.filter((item) => {
-        return item.name !== listItem
-      })
-      this.set('listItems', filtered);
-    },
+    // triggers action to notify main app to show description/open modal dialog
+    // also passes the selected list item up to the main app
     showDescription(listItem) {
-      console.log('list item from new-list-item showDescription', listItem)
-      this.get('onClick')(listItem)
+      this.get('onClick')(listItem);
     }
   }
 });

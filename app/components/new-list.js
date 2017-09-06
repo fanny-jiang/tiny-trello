@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   lists: {},
-  showInput: false,
+  showInput: false, // controls visibility of new list input
   init() {
     this._super.apply(this, arguments);
   },
@@ -12,13 +12,13 @@ export default Ember.Component.extend({
     },
     addList(listName) {
       let listNamePath = `lists.${listName}`;
-      this.set(listNamePath, {items: Ember.A(), description: null});
+      this.set(listNamePath, {items: Ember.A()}); // adds empty list to lists obj
       this.set('listName', '');
       this.toggleProperty('showInput');
     },
-    showDescription(lists) {
-      console.log('whats passed into new-list showDescription', lists)
-      this.get('onClick')(lists);
+    // triggers action in main app to open modal and show description for selected list item
+    showDescription(listItem) {
+      this.get('onClick')(listItem);
     },
   }
 });
