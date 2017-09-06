@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // listItems: null,
+  listItems: null,
   showInput: false,
 
   init() {
@@ -11,9 +11,7 @@ export default Ember.Component.extend({
   didReceiveAttrs() {
     this._super.apply(this, arguments);
     if (this.itemToDelete) {
-      console.log('this', this.itemToDelete);
-      let deleteThis = document.getElementById(this.itemToDelete.name);
-      document.getElementById(this.itemToDelete.name).remove()
+      document.getElementById(this.itemToDelete.name).remove();
     }
   },
   actions: {
