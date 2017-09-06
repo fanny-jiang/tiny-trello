@@ -1,13 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // isShowingModal: true,
   actions: {
     deleteItem () {
-
+      this.get('onSubmit')();
     },
     closeModal() {
-      // this.set('displayModal', false);
       this.get('onClick')();
     }
   }

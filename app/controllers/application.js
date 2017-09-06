@@ -13,9 +13,15 @@ export default Ember.Controller.extend({
       this.set('displayModal', true);
       this.set('selectedItem', item)
       console.log('item from application open modal: ', item)
+      console.log('selecteditem:', this.selectedItem)
     },
     closeModal() {
       this.set('displayModal', false);
+    },
+    deleteItem() {
+      this.set('displayModal', false);
+      this.set('itemToDelete', this.selectedItem);
+      console.log('DELETE BUTTON reached application', this.itemToDelete)
     }
   }
 });

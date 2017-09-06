@@ -19,6 +19,6 @@ export default Ember.Component.extend({
     showDescription(lists) {
       console.log('whats passed into new-list showDescription', lists)
       this.get('onClick')(lists);
-    }
+    },
   }
 });

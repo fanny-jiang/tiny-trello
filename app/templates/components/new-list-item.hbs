@@ -2,10 +2,13 @@
   <h4><a href="#" onClick={{action "showDescription" item}}>{{item.name}}</a></h4>
 {{/each}}
 
-{{#if showInput}}
-  {{input value=listItem enter=(action "addListItem" listItem listName) placeholder="New list item" autofocus=true}}
-{{/if}}
+<div class="add-list-item">
+  {{#if showInput}}
+    {{input value=listItem enter=(action "addListItem" listItem listName) placeholder="New list item" autofocus=true}}
+  {{/if}}
 
-<button {{action "newListitemInput"}}>Add List Item...</button>
+  <button class="btn add-list-item" {{action "newListitemInput"}}>Add List Item...</button>
+
+</div>
 
 {{yield}}

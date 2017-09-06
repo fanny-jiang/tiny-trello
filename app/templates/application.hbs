@@ -15,7 +15,8 @@
           <h4><a href="#" onClick={{action "openModal" item}}>{{item.name}}</a></h4>
         {{/each}}
         {{new-list-item
-          onClick=(action "openModal")}}
+          onClick=(action "openModal")
+          itemToDelete=itemToDelete}}
       </div>
       {{new-list
         onClick=(action "openModal")}}
@@ -23,10 +24,13 @@
   </body>
 </div>
 
+{{!-- Modal --}}
+
 {{#if displayModal}}
   {{list-item-modal
     itemName=selectedItem.name
     description=selectedItem.description
-    onClick=(action "closeModal")}}
+    onClick=(action "closeModal")
+    onSubmit=(action "deleteItem")}}
 {{/if}}
 

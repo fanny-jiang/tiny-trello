@@ -8,6 +8,15 @@ export default Ember.Component.extend({
     this._super.apply(this, arguments);
     this.set('listItems', Ember.A());
   },
+  didReceiveAttrs() {
+    this._super.apply(this, arguments);
+    console.log('got item to delete', this.itemToDelete)
+    let filtered = this.listItems.filter((item) => {
+      return item.name !== this.itemToDelete
+    })
+    this.set('listItems', filtered);
+    console.log('listItems after filter', this)
+  },
   actions: {
     newListitemInput() {
       this.toggleProperty('showInput');
@@ -16,15 +25,16 @@ export default Ember.Component.extend({
       this.listItems.pushObject({name: listItem, description: ''});
       this.set('listItem', '');
       this.toggleProperty('showInput');
+      console.log('listItems after adding', this.listItems)
     },
     deleteListItem(listItem) {
+      console.log('listItem to delete', listItem)
       let filtered = this.listItems.filter((item) => {
         return item.name !== listItem
       })
-      this.set('listItems',filtered);
+      this.set('listItems', filtered);
     },
     showDescription(listItem) {
-      // this.set('displayModal', true);
       console.log('list item from new-list-item showDescription', listItem)
       this.get('onClick')(listItem)
     }

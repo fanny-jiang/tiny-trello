@@ -2,12 +2,12 @@
 @import "ember-modal-dialog/ember-modal-appearance";
 @import "ember-bootstrap/bootstrap";
 
-button {
-  margin-top: 20px;
+.add-new-list {
+  margin: 20px 10px;
 }
 
-.add-new-list {
-  margin-left: 15px;
+.add-list-item {
+  margin-top: 10px;
 }
 
 .card {
@@ -17,4 +17,12 @@ button {
   width: 300px;
   margin: 10px;
   border-radius: 5px;
+}
+
+.modal-content {
+  padding: 10px 20px;
+}
+
+textarea {
+  margin: 5px 0 5px 0;
 }
