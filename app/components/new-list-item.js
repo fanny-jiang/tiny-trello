@@ -7,15 +7,7 @@ export default Ember.Component.extend({
   init() {
     this._super.apply(this, arguments);
     this.set('listItems', Ember.A());
-    this.listItems.pushObjects([{
-      name: 'Learn Ember.js',
-      description: 'Complete emberschool tutorial'
-    }, {
-      name: 'Practice algorithms',
-      description: 'Review binary search trees'
-    }]);
   },
-  isShowingModal: false,
   actions: {
     newListitemInput() {
       this.toggleProperty('showInput');

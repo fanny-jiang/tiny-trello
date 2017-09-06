@@ -11,6 +11,9 @@
     <div class="row">
       <div class="col-md-4 card">
       <h2>Main List</h2>
+        {{#each defaultItems as |item|}}
+          <h4><a href="#" onClick={{action "openModal" item}}>{{item.name}}</a></h4>
+        {{/each}}
         {{new-list-item
           onClick=(action "openModal")}}
       </div>
