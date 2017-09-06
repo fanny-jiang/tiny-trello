@@ -1,5 +1,5 @@
 {{#each listItems as |item|}}
-  <h4><a href="#" onClick={{action "showDescription" item}}>{{item.name}}</a></h4>
+  <h4 id={{item.name}}><a href="#" onClick={{action "showDescription" item}}>{{item.name}}</a></h4>
 {{/each}}
 
 <div class="add-list-item">

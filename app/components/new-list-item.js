@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  listItems: null,
+  // listItems: null,
   showInput: false,
 
   init() {
@@ -10,12 +10,11 @@ export default Ember.Component.extend({
   },
   didReceiveAttrs() {
     this._super.apply(this, arguments);
-    console.log('got item to delete', this.itemToDelete)
-    let filtered = this.listItems.filter((item) => {
-      return item.name !== this.itemToDelete
-    })
-    this.set('listItems', filtered);
-    console.log('listItems after filter', this)
+    if (this.itemToDelete) {
+      console.log('this', this.itemToDelete);
+      let deleteThis = document.getElementById(this.itemToDelete.name);
+      document.getElementById(this.itemToDelete.name).remove()
+    }
   },
   actions: {
     newListitemInput() {
