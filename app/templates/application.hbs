@@ -11,13 +11,19 @@
     <div class="row">
       <div class="col-md-4 card">
       <h2>Main List</h2>
-        {{new-list-item}}
+        {{new-list-item
+          onClick=(action "openModal")}}
       </div>
-      {{new-list}}
+      {{new-list
+        onClick=(action "openModal")}}
     </div>
   </body>
 </div>
 
-
-
+{{#if displayModal}}
+  {{list-item-modal
+    itemName=selectedItem.name
+    description=selectedItem.description
+    onClick=(action "closeModal")}}
+{{/if}}
 

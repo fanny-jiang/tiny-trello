@@ -31,8 +31,10 @@ export default Ember.Component.extend({
       })
       this.set('listItems',filtered);
     },
-    toggleModal() {
-      this.toggleProperty('isShowingModal');
+    showDescription(listItem) {
+      // this.set('displayModal', true);
+      console.log('list item from new-list-item showDescription', listItem)
+      this.get('onClick')(listItem)
     }
   }
 });

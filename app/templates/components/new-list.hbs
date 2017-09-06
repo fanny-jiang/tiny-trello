@@ -1,7 +1,9 @@
 {{#each-in lists as |list|}}
   <div class="col-md-4 card">
     <h2>{{list}}</h2>
-      {{new-list-item listName=list}}
+      {{new-list-item
+        listName=list
+        onClick=(action "showDescription")}}
   </div>
 {{/each-in}}
 {{#if showInput}}

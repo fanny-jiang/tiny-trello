@@ -1,10 +1,9 @@
-{{#bs-modal-simple title=itemName}}
-  {{!-- {{#bs-form formLayout="horizontal" model=this onSubmit=(action "closeModal" itemName=itemName)}} --}}
+{{#bs-modal backdropClose=false}}
+<h3>{{itemName}}</h3>
   <strong>Description</strong>
     {{textarea value=description cols="75" rows="6" property="description"}}
-    {{!-- {{bs-button defaultText="Save" type="primary" buttonType="submit" onClick=(action "closeModal" itemName=itemName)}} --}}
-    {{bs-button defaultText="Delete" type="danger" onClick=(action "deleteItem" itemName=itemName)}}
-  {{!-- {{/bs-form}} --}}
-{{/bs-modal-simple}}
+    {{bs-button defaultText="Save" type="primary" onClick=(action "closeModal")}}
+    {{bs-button defaultText="Delete" type="danger" onSubmit=(action "deleteItem" itemName=itemName)}}
+{{/bs-modal}}
 
 {{yield}}
