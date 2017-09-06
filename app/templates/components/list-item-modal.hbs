@@ -3,7 +3,7 @@
   <strong>Description</strong>
   {{#bs-form onSubmit=(action "deleteItem")}}
     {{textarea value=description cols="75" rows="6" property="description"}}
-    {{bs-button defaultText="Save" type="primary" onClick=(action "closeModal")}}
+    {{bs-button defaultText="Close" type="primary" onClick=(action "closeModal")}}
     {{bs-button defaultText="Delete" type="danger" buttonType="submit"}}
   {{/bs-form}}
 {{/bs-modal}}
