@@ -14,11 +14,13 @@
       <h2>Main List
         <button type="button" class="close" aria-label="Close" onClick={{action "deleteList" "default-list"}}>
           <span aria-hidden="true">&times;</span>
+          {{bs-tooltip title="Delete list"}}
         </button>
       </h2>
       {{!-- Default list items --}}
         {{#each defaultItems as |item|}}
-          <h4 id={{item.name}}><a href="#" onClick={{action "openModal" item}}>{{item.name}}</a></h4>
+          <h4 id={{item.name}}><a href="#" onClick={{action "openModal" item}}>{{item.name}}</a>
+          </h4>
         {{/each}}
         {{!-- Default list's new items --}}
         {{new-list-item

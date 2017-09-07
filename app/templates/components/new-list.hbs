@@ -3,6 +3,7 @@
     <h2>{{listName}}
       <button type="button" class="close" aria-label="Close" onClick={{action "deleteList" listName}}>
         <span aria-hidden="true">&times;</span>
+        {{bs-tooltip title="Delete list"}}
       </button>
     </h2>
       {{!-- onClick evt from new-list-item triggers show description action and passes selected list item to the main app --}}
