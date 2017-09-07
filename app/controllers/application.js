@@ -22,6 +22,9 @@ export default Ember.Controller.extend({
     deleteItem() {
       this.set('displayModal', false);
       this.set('itemToDelete', this.selectedItem);
+    },
+    deleteList(listName) {
+      document.getElementById(listName).remove();
     }
   }
 });

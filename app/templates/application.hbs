@@ -9,8 +9,12 @@
 <div class="container">
   <body>
     <div class="row">
-      <div class="col-md-4 card">
-      <h2>Main List</h2>
+      <div id="default-list" class="col-md-4 card">
+      <h2>Main List
+        <button type="button" class="close" aria-label="Close" onClick={{action "deleteList" "default-list"}}>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </h2>
       {{!-- Default list items --}}
         {{#each defaultItems as |item|}}
           <h4 id={{item.name}}><a href="#" onClick={{action "openModal" item}}>{{item.name}}</a></h4>
