@@ -1,6 +1,10 @@
 {{#each-in lists as |listName|}}
-  <div class="col-md-4 card">
-    <h2>{{listName}}</h2>
+  <div id={{listName}} class="col-md-4 card">
+    <h2>{{listName}}
+      <button type="button" class="close" aria-label="Close" onClick={{action "deleteList" listName}}>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </h2>
       {{!-- onClick evt from new-list-item triggers show description action and passes selected list item to the main app --}}
       {{new-list-item onClick=(action "showDescription")}}
   </div>

@@ -20,5 +20,8 @@ export default Ember.Component.extend({
     showDescription(listItem) {
       this.get('onClick')(listItem);
     },
+    deleteList(listName) {
+      document.getElementById(listName).remove();
+    }
   }
 });
